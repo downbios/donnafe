@@ -15,14 +15,18 @@ export const WrapperButton = styled.div`
   gap: 1rem;
 `;
 export const HeaderStyle = styled.header`
-  background-color: aliceblue;
+  background-color: navajowhite;
 `;
 export const HeaderTitle = styled.h1`
   color: #333333;
 `;
-export const AuthButton = styled.button`
+interface AuthButtonProps {
+  isLogged: boolean;
+}
+export const AuthButton = styled.button<AuthButtonProps>`
   font-family: "Oswald", sans-serif;
-  background-color: #e6c499;
+  background-color: ${(props) => (props.isLogged ? "#333" : "#e6c499")};
+  color: ${(props) => (props.isLogged ? "#fff" : "#333")};
   border: none;
   border-radius: 5px;
   height: 2rem;
