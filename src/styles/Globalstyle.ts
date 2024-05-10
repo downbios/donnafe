@@ -9,4 +9,13 @@ export const GlobalStyle = createGlobalStyle`
 body {
     font-family: 'Allura', cursive;
 }
+button {
+    cursor: pointer;
+    transition: filter 0.3s ;
+
+    &:hover {
+        filter: brightness(1.3);
+        transition: filter 0.3s ;
+    }
+}
 `;
