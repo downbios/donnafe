@@ -18,9 +18,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <S.Review>
           {Array.from({ length: 5 }).map((_, index) =>
             index < Math.round(product.rating.rate) ? (
-              <AiFillStar />
+              <AiFillStar key={index} />
             ) : (
-              <AiOutlineStar />
+              <AiOutlineStar key={index} />
             )
           )}
           ({product.rating.rate})

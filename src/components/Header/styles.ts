@@ -21,12 +21,12 @@ export const HeaderTitle = styled.h1`
   color: #333333;
 `;
 interface AuthButtonProps {
-  isLogged: boolean;
+  $isLogged: boolean;
 }
 export const AuthButton = styled.button<AuthButtonProps>`
   font-family: "Oswald", sans-serif;
-  background-color: ${(props) => (props.isLogged ? "#333" : "#e6c499")};
-  color: ${(props) => (props.isLogged ? "#fff" : "#333")};
+  background-color: ${(props) => (props.$isLogged ? "#333" : "#e6c499")};
+  color: ${(props) => (props.$isLogged ? "#fff" : "#333")};
   border: none;
   border-radius: 5px;
   height: 2rem;

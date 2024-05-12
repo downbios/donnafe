@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 interface ContainerProps {
-  ViewCart: boolean;
+  $ViewCart: boolean;
 }
 
 export const Container = styled.aside<ContainerProps>`
   position: fixed;
   top: 0;
-  right: ${(props) => (props.ViewCart ? "0" : "-300px")};
+  right: ${(props) => (props.$ViewCart ? "0" : "-300px")};
   width: 300px;
   background-color: aliceblue;
   height: 100vh;
