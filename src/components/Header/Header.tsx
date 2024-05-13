@@ -31,6 +31,9 @@ export const Header: React.FC = () => {
     }
   }
 
+  const toogleShowCart = () => {
+    setShowCart(!showCart);
+  };
   return (
     <S.HeaderStyle>
       <S.WrapperHeader>
@@ -40,13 +43,13 @@ export const Header: React.FC = () => {
             {Logged ? "LogOut" : "LogIn"}
             {Logged ? <FiLogOut /> : <FiLogIn />}
           </S.AuthButton>
-          <S.CartButton onClick={() => setShowCart(!showCart)}>
+          <S.CartButton onClick={toogleShowCart}>
             Carrinho
             <FiShoppingCart />
           </S.CartButton>
         </S.WrapperButton>
       </S.WrapperHeader>
-      <Cart $ViewCart={showCart} />
+      <Cart $ViewCart={showCart} toogleViewcart={toogleShowCart} />
     </S.HeaderStyle>
   );
 };

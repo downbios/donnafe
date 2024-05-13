@@ -17,6 +17,7 @@ export const Container = styled.aside<ContainerProps>`
 
   svg {
     font-size: x-large;
+    cursor: pointer;
   }
 `;
 
