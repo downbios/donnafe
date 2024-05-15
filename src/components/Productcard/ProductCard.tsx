@@ -3,12 +3,37 @@ import * as S from "./styles";
 import { FiShoppingCart } from "react-icons/fi";
 import { FaRegShareSquare } from "react-icons/fa";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
+import { useDispatch, useSelector } from "react-redux";
+import { RootReducer } from "../../redux/root-reducer";
 
 interface ProductCardProps {
   product: Product;
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+  const { cart } = useSelector(
+    (rootReducer: RootReducer) => rootReducer.cartReducer
+  );
+
+  const dispatch = useDispatch();
+
+  const isOncart =
+    cart.find((productOncart) => product.id === productOncart.id) !== undefined;
+
+  function handleAddProduct() {
+    dispatch({
+      type: "ADD_TO_CART",
+      payload: product,
+    });
+  }
+
+  function handleRemoveProduct() {
+    dispatch({
+      type: "REMOVE_TO_CART",
+      payload: product,
+    });
+  }
+
   return (
     <S.Card>
       <S.Productimage src={product.image} alt={product.description} />
@@ -29,10 +54,17 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       </S.ReviewPriceCotainer>
 
       <S.AddCardButtonWrapper>
-        <S.AddCardButton>
-          Adicioar ao carrinho
-          <FiShoppingCart />
-        </S.AddCardButton>
+        {isOncart ? (
+          <S.RemoveCartButton onClick={handleRemoveProduct}>
+            Remover do carrinho
+            <FiShoppingCart />
+          </S.RemoveCartButton>
+        ) : (
+          <S.AddCardButton onClick={handleAddProduct}>
+            Adicioar ao carrinho
+            <FiShoppingCart />
+          </S.AddCardButton>
+        )}
         <S.Share>
           Compartilhar
           <FaRegShareSquare />

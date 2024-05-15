@@ -30,3 +30,19 @@ export const HeaderCartWrraper = styled.div`
   align-items: center;
   justify-content: space-between;
 `;
+
+export const CardProductList = styled.ul`
+  padding: 2rem 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+`;
+
+export const CardProductItem = styled.li`
+  font-family: "Oswald", sans-serif;
+  font-weight: 300;
+  color: forestgreen;
+`;
+
+export const CartTotal = styled.strong``;

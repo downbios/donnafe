@@ -86,3 +86,20 @@ export const AddCardButton = styled.button`
     font-size: large;
   }
 `;
+export const RemoveCartButton = styled.button`
+  font-family: "Oswald", sans-serif;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  height: 3rem;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  svg {
+    font-size: large;
+  }
+`;

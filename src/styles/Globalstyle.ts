@@ -14,7 +14,7 @@ button {
     transition: filter 0.3s ;
 
     &:hover {
-        filter: brightness(1.3);
+        filter: brightness(1.2);
         transition: filter 0.3s ;
     }
 }
