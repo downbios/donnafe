@@ -11,6 +11,8 @@ body {
 }
 button {
     cursor: pointer;
+    border: none;
+    background: none;
     transition: filter 0.3s ;
 
     &:hover {

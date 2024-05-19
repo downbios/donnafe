@@ -5,6 +5,7 @@ import { FaRegShareSquare } from "react-icons/fa";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { RootReducer } from "../../redux/root-reducer";
+import { addProdcut, removeProduct } from "../../redux/CartReducer/cart-slice";
 
 interface ProductCardProps {
   product: Product;
@@ -21,17 +22,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     cart.find((productOncart) => product.id === productOncart.id) !== undefined;
 
   function handleAddProduct() {
-    dispatch({
-      type: "ADD_TO_CART",
-      payload: product,
-    });
+    dispatch(addProdcut(product));
   }
 
   function handleRemoveProduct() {
-    dispatch({
-      type: "REMOVE_TO_CART",
-      payload: product,
-    });
+    dispatch(removeProduct(product));
   }
 
   return (

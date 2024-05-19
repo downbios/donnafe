@@ -42,7 +42,9 @@ export const CardProductList = styled.ul`
 export const CardProductItem = styled.li`
   font-family: "Oswald", sans-serif;
   font-weight: 300;
-  color: forestgreen;
 `;
 
-export const CartTotal = styled.strong``;
+export const CartTotal = styled.strong`
+  font-family: "Oswald", sans-serif;
+  font-weight: 300;
+`;
